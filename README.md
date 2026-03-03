@@ -1,6 +1,6 @@
 # Practicing DSA with CPP
 
-![Problems Solved](https://img.shields.io/github/directory-file-count/joor69/Cpp_practice?extension=.cpp&label=Problems%20Solved&color=brightgreen)
+![Problems Solved](https://img.shields.io/github/search/joor69/Cpp_practice/extension:cpp?label=Problems%20Solved&color=brightgreen)
 ![C++](https://img.shields.io/badge/Language-C%2B%2B-blue?logo=c%2B%2B&logoColor=white)
 
 > "Consistency is the key to mastering DSA."
