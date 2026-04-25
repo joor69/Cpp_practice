@@ -64,7 +64,63 @@ public:
 
         return false;
     }
+
+    //Kahn's algorithm to detect cycle
+
+    void calcindegree(vector<int> &indgr)
+    {
+        for(int i=0;i<indgr.size();i++)
+        {
+            for(int neigh:l[i])
+            {
+                indgr[neigh]++;
+            }
+        }
+    }
+
+    bool isCycle()
+    {
+        vector<int> indgr(V,0);
+        queue<int> q;
+
+        calcindegree(indgr);
+        for(int i=0;i<V;i++)
+        {
+            if(indgr[i]==0)
+                q.push(i);
+        }
+
+
+        while(!q.empty())
+        {
+            int curr=q.front();
+            q.pop();
+            for(int neigh:l[curr])
+            {
+                if(indgr[neigh]==0)
+                    q.push(neigh);
+                else
+                    indgr[neigh]--;
+            }
+ 
+        }
+
+        for(int i=0;i<indgr.size();i++)
+        {
+            if(indgr[i]!=0)
+                return true;
+        }
+        
+        return false;
+
+    }
+
+
 };
+
+
+
+
 
 int main()
 {
@@ -77,6 +133,7 @@ int main()
     graph.addEdge(4, 2);
 
     // OUTPUT AS 0 FOR FALSE & 1 FOR TRUE
-    cout << graph.isCycleDir();
+    //cout << graph.isCycleDir();
+    cout<<graph.isCycle();
     return 0;
 }
