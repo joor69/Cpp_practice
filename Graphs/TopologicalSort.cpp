@@ -53,7 +53,7 @@ class Graph{
         }
     }
 
-    //TOPOSORT using BFS
+    //TOPOSORT using BFS(Kahns algo)
     void indegree(vector<int> &indgr)
     {
         for(int i=0;i<indgr.size();i++)
